@@ -26,7 +26,7 @@ const LayoutHeader = () => {
             <Link as={RouterLink} to={"/create"}>
               <Button colorScheme="blue">Create Post</Button>
             </Link>
-            <Link as={RouterLink} to={`/${userInfo?.userId}`}>
+            <Link as={RouterLink} to={`/user/${userInfo?.userId}`}>
               <Button colorScheme="blue">{userInfo?.username}</Button>
             </Link>
           </Flex>
