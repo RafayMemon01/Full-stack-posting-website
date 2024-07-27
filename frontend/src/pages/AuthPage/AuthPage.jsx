@@ -2,9 +2,19 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import LoginComponent from '../../components/AuthComponents/LoginComponent';
 import SignUpComponent from '../../components/AuthComponents/SignUpComponent';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const isAuth = useSelector((state) => state.user.isAuthenticate);
+  const navigate = useNavigate()
+
+  if(isAuth){
+    navigate('/feeds')
+    return;
+  }
+
 
   return (
     <Box flexDir={'column'} h={'80vh'} alignItems={'center'}  display={'flex'}>
