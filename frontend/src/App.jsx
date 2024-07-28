@@ -18,7 +18,7 @@ function App() {
         <Route path="/feeds" element={isAuthentic ? <FeedPage /> : <AuthPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/user/:userId" element={<ProfilePage />} />
+        <Route path="/user/:userId" element={isAuthentic?<ProfilePage />:<AuthPage/>} />
       </Routes>
     </PageLayout>
   );

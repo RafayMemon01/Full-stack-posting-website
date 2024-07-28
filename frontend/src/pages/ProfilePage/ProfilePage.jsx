@@ -12,7 +12,7 @@ const ProfilePage = () => {
 
   if(!isAuth){
     navigate('/auth')
-    return
+    return;
   }
   return (
     <Box h={'80vh'} px={10}>
